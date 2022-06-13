@@ -19,7 +19,7 @@ public class UsingCandidate {
    
         Candidate candi= new Candidate();
         Experience exp = new Experience();
-        Fresher fres = new Fresher();
+        Fresher fresh = new Fresher();
         Intern intern = new Intern();
 
         int choice1, choice2;
@@ -47,8 +47,8 @@ public class UsingCandidate {
                                 break;                                      
                             }
                             case 2: {
-                                fres.createFresher();
-                                fres.displayFresher();
+                                fresh.createFresher();
+                                fresh.displayFresher();
                                 break;
                             }
                             case 3: {
@@ -62,7 +62,6 @@ public class UsingCandidate {
                 }
                 case 2: {
                     do{
-                        
                         System.out.println("- Update experience");
                         System.out.println("- Update fresher");
                         System.out.println("- Update intern");
@@ -74,8 +73,8 @@ public class UsingCandidate {
                                 break;                                      
                             }
                             case 2: {
-                                fres.updateFresher();
-                                fres.displayFresher();
+                                fresh.updateFresher();
+                                fresh.displayFresher();
                                 break;
                             }
                             case 3: {
@@ -84,14 +83,60 @@ public class UsingCandidate {
                                 break;
                             }
                         }
-                    } while (choice2 != 3);
+                    } while (choice2 < 1 || choice2 > 3);
                     break;
                 }
                 case 3: {
-                    
+                    do{
+                        System.out.println("- Delete experience");
+                        System.out.println("- Delete fresher");
+                        System.out.println("- Delete intern");
+                        choice2 = sc.nextInt();        
+                        switch (choice2){
+                            case 1: {
+                                exp.deleteExp();
+                                exp.displayExp();
+                                break;                                      
+                            }
+                            case 2: {
+                                fresh.deleteFresher();
+                                fresh.displayFresher();
+                                break;
+                            }
+                            case 3: {
+                                intern.deleteIntern();
+                                intern.displayIntern();
+                                break;
+                            }
+                        }
+                    } while (choice2 < 1 || choice2 > 3);
+                    break;
                 }
                 case 4: {
-                  
+                    do{
+                        System.out.println("- Search experience");
+                        System.out.println("- Search fresher");
+                        System.out.println("- Search intern");
+                        choice2 = sc.nextInt();        
+                        switch (choice2){
+                            case 1: {
+                                exp.searchExp();
+                                exp.displayExp();
+                                break;                                      
+                            }
+                            case 2: {
+                                fresh.searchFresher();
+                                fresh.displayFresher();
+                                break;
+                            }
+                            case 3: {
+                                intern.searchIntern();
+                                intern.displayIntern();
+                                break;
+                            }
+                        }
+                    } while (choice2 < 1 || choice2 > 3);
+                    break;
                 }
                 case 5: {
                     System.out.println("Bye!");
